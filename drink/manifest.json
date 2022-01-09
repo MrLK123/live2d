@@ -1,0 +1,36 @@
+{
+  "name": "喝水助手",
+  "description": "一个小时喝杯水!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["index.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["/*.js"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "host_permissions": ["https://api.btstu.cn/yan/api.php"],
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "/images/drink.png"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "/images/drink.png",
+    "32": "/images/drink.png",
+    "48": "/images/drink.png",
+    "128": "/images/drink.png"
+  },
+  "homepage_url": "https://github.com/MrLK123/live2d"
+}
